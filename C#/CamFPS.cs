@@ -67,10 +67,10 @@ public class CamFPS : MonoBehaviour {
             Input.GetKey(KeyCode.S) ||
             Input.GetKey(KeyCode.D)) /* Moving */
         {
-            if (Input.GetKey(PlayerMove.DushKey)) /* Yes Dush */
+            if (Input.GetKey(PlayerMove.DashKey)) /* Dash */
             {
                 print("Running");
-            } else                                /* Not Dush */
+            } else                                /* Not Dash */
             {
                 print("Walking");
             }
