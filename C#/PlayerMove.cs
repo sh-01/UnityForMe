@@ -6,15 +6,15 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float defaultSpeed;
-    [SerializeField] private float dushSpeed;
+    [SerializeField] private float dashSpeed;
     [SerializeField] private float jumpMultiplier;
 
     [SerializeField] private AnimationCurve jumpFallOff;
 
     [SerializeField] private KeyCode jumpKey;
-    [SerializeField] private KeyCode dushKey;
+    [SerializeField] private KeyCode dashKey;
 
-    public static KeyCode DushKey;
+    public static KeyCode DashKey;
 
     private CharacterController characterController;
 
@@ -29,21 +29,21 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        DushKey = dushKey;
+        DashKey = dashKey;
     }
 	
 	void Update ()
     {
         PlayerMoveMent();
         JumpInput();
-        Dush();
+        Dash();
     }
 
-    private void Dush()
+    private void Dash()
     {
-        if (Input.GetKey(dushKey))
+        if (Input.GetKey(dashKey))
         {
-            speed = dushSpeed * 0.1f;
+            speed = dashSpeed * 0.1f;
         } else
         {
             speed = defaultSpeed * 0.1f;
